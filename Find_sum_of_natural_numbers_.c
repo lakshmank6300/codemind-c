@@ -1,11 +1,8 @@
 #include<stdio.h>
 int main()
 {
-    int a,s=0,i;
+    int a;
     scanf("%d",&a);
-    for(i=1;i<=a;i++)
-    {
-        s=s+i;
-    }
-    printf("%d",s);
+    printf("%d",((a)*(a+1))/2);
+    
 }
