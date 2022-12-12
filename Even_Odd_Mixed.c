@@ -1,22 +1,23 @@
 #include<stdio.h>
 int main()
 {
-    int a,i=0,k=0,j=0,b;
+    int a,b,c=0,i=0,j=0;
     scanf("%d",&a);
     while(a!=0)
     {
         b=a%10;
-        i++;
+        c++;
         if(b%2==0)
+        i++;
+        else if(b%2==1)
         j++;
-        else
-        k++;
         a=a/10;
     }
-    if(i==j)
-    printf("Even");
-    else if(i==k)
-    printf("Odd");
-    else
-    printf("Mixed");
+     if(c==i)
+       printf("Even");
+        else if(c==j)
+        printf("Odd");
+        else
+        printf("Mixed");
+    
 }
