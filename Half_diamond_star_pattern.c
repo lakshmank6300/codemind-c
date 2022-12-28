@@ -3,7 +3,7 @@ int main()
 {
     int i,j,k,n;
     scanf("%d",&n);
-    if(n<=100 && n>=3)
+    if(n>=3 && n<=100)
     {
     for(i=1;i<n;i++)
     {
@@ -16,7 +16,7 @@ int main()
     }
     for(i=1;i<=n;i++)
     {
-        for(j=i;j<=n;j++)
+     for(j=i;j<=n;j++)
         {
             printf("*");
         }
@@ -25,7 +25,5 @@ int main()
     }
     }
     else
-    {
-        printf("The pattern is not possible");
-    }
+    printf("The pattern is not possible");
 }
