@@ -1,23 +1,22 @@
 #include<stdio.h>
-#include<math.h>
 int main()
 {
-    int s=0,n,c=0,k=0;
-    scanf("%d",&n);
-    int a[100],i;
-    for(i=0;i<n;i++)
+    int a,i,c=0;
+    scanf("%d",&a);
+    int n[a];
+    for(i=0;i<a;i++)
     {
-        k++;
-        scanf("%d",&a[i]);
-        if(a[i]%2==0)
-        s++;
-        else if(a[i]%2==1)
-        c++;
+        scanf("%d",&n[i]);
     }
-    if(s==k)
+    for(i=0;i<a;i++)
     {
-        printf("True");
+        if(n[i]%2==0)
+        {
+            c++;
+        }
     }
+    if(c==a)
+    printf("True");
     else
     printf("False");
 }
