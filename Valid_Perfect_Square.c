@@ -1,0 +1,31 @@
+#include<stdio.h>
+int main()
+{
+   long long int a,b,c,k,l,i,j,n,t;
+    scanf("%lld",&t);
+    while(t--)
+    {
+    	l=0;
+    scanf("%lld",&n);
+    if(n>=0)
+    {
+        for(j=1;j<=n;j++)
+        {
+            if(j*j==n)
+            {
+               l=1;
+               break;
+            }
+        }
+    if(l==1)
+    printf("True
+");
+    else
+    printf("False
+");
+    }
+    else
+    printf("False
+");
+    }
+}
