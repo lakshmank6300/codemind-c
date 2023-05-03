@@ -1,42 +1,46 @@
 #include<stdio.h>
-void merge(int a[],int l,int m,int r){
-    int i=l,j=m+1,k=0,b[r-l+1];
+#include<math.h>
+void merge(int l,int m,int r,int* arr){
+    int res[r-l+1];
+    int i=l,j=m+1,k=0;
     while(i<=m && j<=r){
-        if(a[i]<=a[j]) b[k++]=a[i++];
-        else b[k++]=a[j++];
+        if(arr[i]<=arr[j])
+            res[k++]=arr[i++];
+        else
+            res[k++]=arr[j++];
     }
-    while(i<=m) 
-    b[k++]=a[i++];
-    while(j<=r)
-    b[k++]=a[j++];
+    while(i<=m){
+        res[k++]=arr[i++];
+    }
+    while(j<=r){
+    res[k++]=arr[j++];
+    }
     k=0;
     for(i=l;i<=r;i++)
-    a[i]=b[k++];
+    arr[i]=res[k++];
 }
-void merge_sort(int a[],int l,int r){
-    int m;
+void merge_sort(int l,int r,int* arr){
     if(l<r){
-        m=(l+r)>>1;
-        merge_sort(a,l,m);
-        merge_sort(a,m+1,r);
-        merge(a,l,m,r);
+        int m=(l+r)>>1;
+        merge_sort(l,m,arr);
+        merge_sort(m+1,r,arr);
+        merge(l,m,r,arr);
     }
 }
 int main(){
-    int i,j,n,k=0;
+    int n,socks[100];
     scanf("%d",&n);
-    int a[n];
+    int i;
+    int c=0;
     for(i=0;i<n;i++){
-        scanf("%d",&a[i]);
+        scanf("%d",&socks[i]);
     }
-    merge_sort(a,0,n-1);
-     for(i=0;i<n;i){
-         if(a[i]==a[i+1]){
-         i+=2;
-         k++;
-         }
-         else
-         i++;
-     }
-     printf("%d",k);
+    merge_sort(0,n-1,socks);
+    for(i=0;i<n;i++){
+        if(socks[i]==socks[i+1]){
+            i++;
+            c++;
+        }
+    }
+    printf("%d",c);
 }
