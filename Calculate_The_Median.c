@@ -28,7 +28,7 @@ int main()
 	if(n%2==0)
 	{
 	    c=(a[b]+a[k])/2;
-	    printf("%d",c+6);
+	    printf("%d",c);
 	}
 	else
 	{
