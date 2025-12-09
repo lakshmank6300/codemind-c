@@ -2,8 +2,7 @@
 #include<string.h>
 int main(){
     char ch[100];
-    scanf("%[^
-]s",&ch);
+    scanf("%[^\n]s",&ch);
     int i=0,c=0;
     if(ch[0]>='A' && ch[0]<='Z'){
         c=0;
